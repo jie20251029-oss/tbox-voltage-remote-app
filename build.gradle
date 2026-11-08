@@ -1,0 +1,50 @@
+
+buildscript {
+
+    apply from: 'config.gradle'
+
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/gradle-plugin'
+        }
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url 'https://repo1.maven.org/maven2/' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.1'
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/jcenter'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/google'
+        }
+        maven {
+            url 'https://maven.aliyun.com/repository/gradle-plugin'
+        }
+        google()
+        jcenter()
+        maven {
+            url "https://bintray.com/wechat-sdk-team/maven"  //配置仓库即可
+        }
+        mavenCentral()
+        maven { url 'https://repo1.maven.org/maven2/' }
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
